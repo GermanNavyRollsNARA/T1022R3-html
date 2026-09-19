@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+             .body {
+                font-weight: 600;
+                font-style: normal;
+                margin-left: 50px;
+            }
+            .datePlace {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 40px;
+            }
+            .leftText {
+                text-align: center;
+            }
+            .rightText  {
+            display: inline;
+            text-align: right;
+            }
+            .center {
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+            /* Double underline effect */
+            .doubleUnderline {
+                position: relative;
+                display: inline-block;
+                text-align: center;
+                margin-right: 50px;
+                margin-left: auto;
+                overflow: visible;;
+            }               
+
+            .double-underline::after,
+            .doubleUnderline::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: black;
+                margin: 0;
+            }               
+
+            .doubleUnderline::before {
+                bottom: 0;        /* first underline */
+            }               
+            .double-underline::after {
+                bottom: -3px;     /* second underline slightly below */
+            }          
+            p {
+                padding: 0;
+                margin: 0;
+            }     
+            .indent > span {
+                display:block ;
+                padding-left: 40px;
+                text-indent: -20px;
+            }
+            .indentfar {
+                padding-left: 40px;
+                margin-left: 0;
+                display: block;
+                position: relative;
+            }
+            .upositions {
+                border-collapse: collapse;
+                margin-left: 40px;
+            }
+            .upositions td:first-child {
+                width: 50px;
+            }
+            .upositions td:nth-child(2) {
+                width: 125px;
+            }
+            .underline {
+                text-decoration: underline;
+            }
+            .ruby {
+                margin-left: 100px;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="body">
+        <div class="datePlace"><span class="leftText">I. U. Flottille.</span> <span>Gg. 10 K.</span> <span class="rightText">Helgoland, den 8.8.14.</span></div>
+
+        <div class="center"><span class="doubleUnderline">Ganz Geheim.</span></div>
+        <p>Ausführungsbestimmungen zum Befehl des I.B.d.A. Gg.369 N.1. vom 2.8.14. 
+        Grundsätze für die Sicherung der Deutschen Bucht von Beginn der Feindseligkeiten an.</p>
+
+        <p class="indent"><span>1.&rpar; <abbr title="Latin perge perge, 'continued elsewhere' and so throughout">pp.</abbr></span></p>
+        <p class="indent"><span>2.&rpar; Positionen der Boote:</span></p>
+        <table class="upositions">
+            <tr>
+                <td>1.</td>
+                <td>53&deg; 52,0' N</td>
+                <td>7&deg; 28,0' O</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>54&deg; 0,0' N</td>
+                <td>7&deg; 25,5' O</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>54&deg; 8,0' N</td>
+                <td>7&deg; 27,5' O</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>54&deg; 15,5' N</td>
+                <td>7&deg; 38,0' O</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>54&deg; 21,5' N</td>
+                <td>7&deg; 41,5' O</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>54&deg; 26,0' N</td>
+                <td>7&deg; 52,5' O</td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>54&deg; 28,5' N</td>
+                <td>8&deg; 6,0' O</td>
+            </tr>
+        </table>
+                
+        <p class="indent"><span>3.&rpar; <span class="underline">Vorläufige Verteilung der U-Boote:</span></span>
+        </p>
+        <p class="indentfar"><span class="underline">1. Gruppe 4.8.14.</span> U.5, <s>6</s>, 7, 8, 9, 10, 15, 17 ( Reserve U. 14 ) Leitung Hamburg. D. 5, [G or S]. 99.</p>
+        <p class="indentfar"><span class="underline">2. Gruppe 5.8.14.</span> U.19, 20, 21, 22, 24, 13, 16 (Reserve U. 18) Leitung <br><span class="ruby">Stettin. [G or S] 100</span><br>
+        und so weiter.</p>
+
+        <p class="indentfar"><span>Gruppe 1 folgende Positionen:</span><br>
+        1 — U.5. 2 — U.7. 3 — U.8. 4 — U.9. 5 — U.10. 6 — U.15. 7 — U.17.</p>
+        
+        <p class="indentfar">Gruppe 2 nach Anweisung des Chefs der II. U-Flottille.</p>
+
+        <p class="indent"><span>4.&rpar; <span class="underline">Einnehmen und Verlassen der Positionen</span>: Überzeit des Auslaufens und Art des Auslaufens (einzeln oder mit Führerfahrzeugen) nach Anweisung des Leiters. Positionen so verlassen, daß Einlaufen vor Dunkelheit erfolgt.</span></p>
+
+        <p class="indent"><span>5.&rpar; &nbsp;&nbsp;&nbsp;6.&rpar;&nbsp; pp &nbsp;7.&rpar; Unauffällig Platzbojen werfen.</span></p>
+        </div>
+    </body>
+</html>

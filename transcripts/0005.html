@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <style>
+    :root {
+      --local-font: var(--font-fraktur-alt)
+    }
+    main {
+        font-family: var(--local-font);
+        padding: 20px;
+        font-size: 16pt;
+    }
+    .rightText {
+        text-align: right;
+        position: absolute;
+        right: 300px;
+    }
+    .doubleUnderline {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        margin-right: 50px;
+        margin-left: auto;
+        overflow: visible;;
+    }
+
+    .double-underline::after,
+    .doubleUnderline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: black;
+        margin: 0;
+    }
+
+    .doubleUnderline::before {
+        bottom: 0;        /* first underline */
+    }
+
+    .double-underline::after {
+        bottom: -3px;     /* second underline slightly below */
+    }
+    .center {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .underline {
+        text-decoration: underline;
+    }
+    .hangdent {
+        padding: 3em;
+    }
+    p {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .rightText1 {
+        padding-left: 250px;
+    }
+    ol {
+        margin-bottom: 0;
+    }
+    .margin {
+        margin-top: 10px
+    }
+    .rightText2 {
+        padding-left: 170px;
+        padding-top: 10px
+    }
+    .rightText3 {
+        padding-left: 300px;
+    }
+    .sig {
+        font-size: larger;
+    }
+   </style>
+</head>
+<body>
+
+  <main>
+
+    <p>I. U-Flottille. &nbsp; &nbsp; Gg. 11 K. <span class="rightText">den 4.8.14.</span></p>
+    <div class="center"><p class="doubleUnderline">Ganz Geheim.</p></div>
+
+    <p>
+      folgt Op.Befehl No.1 der Hochseeflotte (K.d.H. Gg.1201 A.1. vom 3.8.14.)
+    </p>
+
+    <p class="center underline">Ausführungsbestimmungen zum Op.Befehl No.1.</p>
+
+    <ol>
+      <li>
+        <p>&rpar;<span class="underline"> Neue Verteilung der U-Boote.</span><br>
+          I.Gruppe Sicherung 3.8.14. usw. II.U-Flottille (U.19-22,U24) und U.10.<br>
+          <span class="hangdent">Leiter Chef der II.U-Flottille.</span><br></span>
+          II.Gruppe Sicherung 6.8.14. usw. II.U-Halbflottille (U.13-18) Leiter<br>
+          <span class="hangdent">Chef der II.U-Halbflottille.</span><br>
+          III.Gruppe Klarhalten zu Fernunternehmungen gem. Ziffer 4 des Op.Befehls<br>
+          <span class="hangdent">No.1. I.U.-Halbflottille (U.5,7-9.) Leiter Chef der I.U.-Halbfl.</span>
+        </p>
+      </li>
+      <li>
+        <p>&rpar;
+            U-Bootssicherungslinie wie durch I.B.d.A. Gg.369 A.1. vom 2.8.14. be-<br>
+          <span class="hangdent">fohlen. Lage der Positionen entsprechend der jeweils verfügbaren<br></span>
+          <span class="hangdent">der Boote. Einnehmen und Verlassen derselben nach Anweisung<br></span>
+          <span class="hangdent">der Leiter.</span> 
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Im übrigen behalten die unter I.U.-Flottille Gg.10 K vom 2.8.14. ge-<br>
+          <span class="hangdent">troffenen Anordnungen Gültigkeit.</span>
+        </p>
+      </li>
+    </ol>
+
+    <p class="rightText1">gez. Bauer.</p>
+
+    <p class="margin">
+      An II.U.-Flottille, Hamburg, Stettin, I-III. U.-Halbflottille und alle U.-Boote,<br>
+      <span class="rightText2">gefertigt: <span class="sig">[signed] ?Krupply</span></span><br>
+      <span class="rightText3">Felde.</span>
+    </p>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        :root {
+          --local-font: var(--font-fraktur);
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .center {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .centerInflow {
+          align-items: center;
+          text-align: center;
+        }
+        .spaceout {
+            letter-spacing: 0.4rem;
+            display: block;
+        }
+        .body {
+          font-weight: 600;
+          font-style: normal;
+          margin-left: 50px;
+          font-family: var(--local-font);
+        }
+        .leftText {
+            width: 150px;
+            text-align: center;
+        }
+        .rightText  {
+            display: inline;
+            text-align: right;
+        }
+        .header {
+            display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+        }
+        .right {
+            padding-top: 20px;
+        }
+        /* Double underline effect */
+        .doubleUnderline {
+          position: relative;
+          display: inline-block;
+          text-align: center;
+          margin-right: 50px;
+          margin-left: auto;
+          overflow: visible;;
+        }
+
+        .double-underline::after,
+        .doubleUnderline::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: black;
+          margin: 0;
+        }
+
+        .doubleUnderline::before {
+          bottom: 0;        /* first underline */
+        }
+
+        .double-underline::after {
+          bottom: -3px;     /* second underline slightly below */
+        }
+        .upositions {
+          border-collapse: collapse;
+          table-layout: fixed;
+          margin-bottom: 20px;
+        }
+        .tableLine th {
+          border-bottom: 2px solid #000; /* the black line */
+          padding-bottom: 4px;           /* slight breathing room */
+        }
+
+        .alignRightTable {
+          text-align: right;
+          margin-right: 10px;
+        }
+        .upositions td:first-child {
+          width: 1px;
+          padding-right: 2px;
+          white-space: no-wrap;
+          padding: 0
+        }
+        .upositions td:nth-child(2) {
+          width: 160px;
+        }
+        .upositions td:nth-child(3) {
+          width: 150px;
+        }
+        .briete-label {
+          display: inline-block;
+          margin-left: -35px;
+        }
+        .lange-label {
+          display: inline-block;
+          margin-left: -200px;
+        }
+        .upositions td:nth-child(4) {
+          text-align: center;
+          vertical-align: middle;
+        }
+        .bracket-cell {
+          position: relative;
+          padding-right: 2px; /* space for the bracket */
+        }
+
+        /* the vertical bracket */
+        .bracket-cell::before {
+          content: "";
+          position: absolute;
+          left: 55px;
+          top: 0;
+          bottom: 0;
+          width: 6px;
+        
+          border-right: 3px solid #000;
+          border-top: 2px solid #000;
+          border-bottom: 2px solid #1d1414;
+        
+          border-radius: 6px; /* gives that typewriter “curved brace” look */
+        }
+        .heavyIndent {
+          padding-left: 0;          /* first line stays flush */
+          text-indent: 0;           /* no first-line indent */
+          margin-left: 0;
+        
+          /* the magic */
+          display: block;
+          position: relative;
+        }
+
+        .heavyIndent span {
+          display: block;
+          text-indent: 50px;       /* pulls the first line back to the left */
+          line-height: 1.3;
+        }
+        .wideLetter {
+          letter-spacing: 3cap;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="body">
+        <div class="center underline spaceout">Abschrift!</div>
+        <div class="header">
+        <div class="leftText">
+        <div class="left">Kommando</div>
+        <div class="left">der 2. U-Flottille.</div>
+        <div class="left underline">G.B. Nr. 2A.</div>
+        </div>
+        <div class="rightText">
+        <div class="right">Nordsee, den 2. Aug 1914</div>
+        </div>
+        </div>
+        <div class="center">
+        <span class="doubleUnderline">Ganz Geheim!.</span>
+        </div>
+        <p class="heavyIndent"><span>Befehl fur die Sicherung der Deutschen Bucht an 3.8.14</span>
+            <span>1. &rpar; Nachrichten über politische Lage siehe Geheimbefehl am 2. August d. J.
+            Feindl. Handlungen gegen engl. Kriegs- und Handelsschiffe sind unbedingt zu vermeiden.
+            Russische und französische Streitkräfte sind als feindlich zu behandeln.
+            Über Bewegungen feindlicher Streitkräfte ist nichts bekannt.
+            </span></p>
+            <p class="heavyIndent"><span>2. &rpar; Sicherung der Deutschen Bucht bei Lage siche Stizze.
+            Hauptaufgabe der Sicherung: Schutz der Deutschen Bucht gegen Minenunternehmungen 
+            und Unterseeboote. 
+            U-linie leigt auf Kreisbogen mit 29 Seemeilen Radius-Umfang von Elbe Eins Feuerschiff.
+            </span></p>
+            <div class="centerInflow"><span class="wideLetter">Stellung:</span></div>
+            <table class="upositions">
+                <tr class="tableLine">
+                    <th></th>
+                    <th><span class="briete-label">Briete</span></th>
+                    <th><span class="lange-label">Länge</span></th>
+                    <th class="alignRightTable">Nr. des Bootes</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>53&deg;54'N</td>
+                    <td>7&deg; 25' O</td>
+                    <td>U.21</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>54&deg; 2'N</td>
+                    <td>7&deg; 25' O</td>
+                    <td>U.22</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>54&deg;9,5'N</td>
+                    <td>7&deg; 23' O</td>
+                    <td>U.29</td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>54&deg;16,5'N</td>
+                    <td>7&deg;34' O</td>
+                    <td>U.24</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">5.<br>6.<br>7.</td>
+                    <td rowspan="3">54&deg;22,0'N<br>54&deg;26,0'N<br>54&deg;28,5'N</td>
+                    <td rowspan="3" class="bracket-cell">7&deg;42,5'O<br>7&deg;53,0'O<br>8&deg;6,0' &nbsp;O</td>
+                    <td rowspan="3">Hierfür verfügbar U.13, U.14,<br>
+                    U.16, U.18. Verteilung trifft<br>
+                    Chef der 2. U-Bootflottille.
+                    </td>
+                </tr>
+            </table>
+            <p class="heavyIndent"><span>3.&rpar; 
+                Die Stellungen mussen um 4,30 Uhr am 3. Augu eingenenmen sein. Stellung 1 u.2 legt S.100 aus. 
+                Stellung 3, 4, 5, 6, u. 7 sind selbstandig eingenohmen.
+                Boote tauchklar und abgeblendet. 
+                Vorhalten bei feindlicher Gegenwirken wahrend des Marsches in Stellungen siehe Anlage.
+                Sind feindliche Streitkrafte nicht in Sicht, so kontrolliert nach Einnahme der Sicherungslinie S.100 Stellung 1-7. 6.100 dann Ubootshafen, Stuttin Hoschee-Tonne Sicherung des Ubootshafen.
+            </span></p>
+            <p class="heavyIndent"><span>4.&rpar; Auf Stellung Platzbojen werfen. Solange äußere Torpedo-
+            bootslinie liegt wird Tätigkeitsgebiet durch diese begrenzt. Gehen 
+            Torpedoboote vor feindlichen Streitkräften zurück, darf über 
+            äußere Sicherungslinie hinaus zum Angriff vorgegangen werden.
+            </span></p>
+            <p class="heavyIndent"><span>5.&rpar; Stellungen sind um 8 Uhr abends am 3. August oder auf S.K.-
+            Befehl zu räumen. Boote laufen Ubootshafen ein.</span></p>
+            <p class="heavyIndent"><span>6.&rpar; Niederlegen der <abbr title="secondary weapons">S.K.-Waffen</abbr> nach Ermessen des Kommandan-
+            ten. S.K. ist, solange sie klar ist, besetzt zu halten. Boote der
+            Ersten U-Flottille S.K. möglichst besetzt von O <sup>"</sup> 0 <sup>m</sup> bis D <sup>"</sup> 45 <sup>m</sup>.
+            </span></p>
+            <p class="heavyIndent"><span>7.&rpar; Bei Nebel: Aufgabe durchführen.</span></p>
+        </ol>
+        </div>
+    </body>
+    </html>
