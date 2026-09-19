@@ -58,6 +58,7 @@
         <script>
   // Initialize map
   function initMap0003(container) {
+ console.log("Container size:", container.offsetWidth, container.offsetHeight);
   const map = L.map(container).setView([54.2, 7.7], 9);
 
   map.on('zoom', () => {
