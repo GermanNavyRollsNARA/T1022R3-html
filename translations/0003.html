@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">    
+        <style>
+            .body {
+    font-family: "Unifrak turCook";
+  font-weight: 600;
+  font-style: normal;
+  margin-left: 50px;
+}
+.englishTopPage {
+    margin-top: 100px;
+    margin-left: 150px;
+    margin-right: 90px;
+    font-weight: bold;
+}
+.alignRight {
+    text-align: right;
+    display: block;
+    margin-bottom: 40px;
+}
+.englishTopPage div {
+    padding: 5px;
+}
+.underline {
+    text-decoration: underline;
+}
+.center {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
+}
+.centerInflow {
+  align-items: center;
+  text-align: center;
+}
+.spaceout {
+    letter-spacing: 0.4rem;
+    display: block;
+}
+.leftText {
+    text-align: center;
+}
+.rightText  {
+    display: inline;
+    text-align: right;
+}
+.header {
+    display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.right {
+    padding-top: 20px;
+}
+/* Double underline effect */
+.doubleUnderline {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-right: 50px;
+  margin-left: auto;
+  overflow: visible;;
+}
+
+.double-underline::after,
+.doubleUnderline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: black;
+  margin: 0;
+}
+
+.doubleUnderline::before {
+  bottom: 0;        /* first underline */
+}
+
+.double-underline::after {
+  bottom: -3px;     /* second underline slightly below */
+}
+.upositions {
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin-bottom: 20px;
+}
+.tableLine th {
+  border-bottom: 2px solid #000; /* the black line */
+  padding-bottom: 4px;           /* slight breathing room */
+}
+
+.alignRightTable {
+  text-align: right;
+  margin-right: 10px;
+}
+.upositions td:first-child {
+  width: 20px;
+  padding-right: 2px;
+  white-space: no-wrap;
+  padding: 0
+}
+.upositions td:nth-child(2) {
+  width: 160px;
+}
+.upositions td:nth-child(3) {
+  width: 150px;
+}
+.briete-label {
+  display: inline-block;
+  margin-left: -35px;
+}
+.lange-label {
+  display: inline-block;
+  margin-left: -200px;
+}
+.upositions td:nth-child(4) {
+  text-align: center;
+  vertical-align: middle;
+}
+.bracket-cell {
+  position: relative;
+  padding-right: 2px; /* space for the bracket */
+}
+
+/* the vertical bracket */
+.bracket-cell::before {
+  content: "";
+  position: absolute;
+  left: 55px;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+
+  border-right: 3px solid #000;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #1d1414;
+
+  border-radius: 6px; /* gives that typewriter “curved brace” look */
+}
+.heavyIndent {
+  padding-left: 0;          /* first line stays flush */
+  text-indent: 0;           /* no first-line indent */
+  margin-left: 0;
+
+  /* the magic */
+  display: block;
+  position: relative;
+}
+
+.heavyIndent span {
+  display: block;
+  text-indent: 50px;       /* pulls the first line back to the left */
+  line-height: 1.3;
+}
+.wideLetter {
+  letter-spacing: 3cap;
+}
+.centerInflow {
+    text-align: center;
+}
+td:first-child {
+    column-width: 50px;
+}
+        </style>
+    </head>
+    <body>
+        <div class="body">
+        <div class="center underline spaceout">Copy!</div>
+        <div class="header">
+        <div class="leftText">
+        <div class="left">Command</div>
+        <div class="left">of the 2nd U-[Boat ]Flotilla</div>
+        <div class="left underline">G.B. Nr. 2A.</div>
+        </div>
+        <div class="rightText">
+        <div class="right">North Sea, 2 Aug 1914</div>
+        </div>
+        </div>
+        <div class="center">
+        <span class="doubleUnderline">Top Secret.</span>
+        </div>
+        <p class="heavyIndent"><span>Order for the security of the German Bight on 3 Aug [19]14.</span>
+            <span>1 &rpar; Intelligence on the political situation: see secret order of 2 August of this year. Hostile actions against English warships and merchant vessels are to be absolutely avoided. Russian and French forces are to be treated as hostile. Nothing is known of the movements of enemy forces.
+            </span></p>
+
+            <p class="heavyIndent"><span>2 &rpar; Security of the German Bight — for position see sketch. Primary task of the security patrol: protection of the German Bight against mining operations and submarines. The U-[boat ]line lies on a circular arc with a radius of 29 nautical miles from the Elbe One lightship.</span></p>
+            <div class="centerInflow"><span class="wideLetter">Positions:</span></div>
+            <table class="upositions">
+                <tr class="tableLine">
+                    <th></th>
+                    <th><span class="briete-label">Latitude</span></th>
+                    <th><span class="lange-label">Longitude</span></th>
+                    <th class="alignRightTable">Boat Number</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>53&deg;54'N</td>
+                    <td>7&deg; 25' E</td>
+                    <td>U-21</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>54&deg; 2'N</td>
+                    <td>7&deg; 25' E</td>
+                    <td>U-22</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>54&deg;9.5'N</td>
+                    <td>7&deg; 23' E</td>
+                    <td>U-29</td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>54&deg;16.5'N</td>
+                    <td>7&deg;34' E</td>
+                    <td>U-24</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">5.<br>6.<br>7.</td>
+                    <td rowspan="3">54&deg;22.0'N<br>54&deg;26.0'N<br>54&deg;28.5'N</td>
+                    <td rowspan="3" class="bracket-cell">7&deg;42.5'E<br>7&deg;53.0'E<br>8&deg;6.0' &nbsp;E</td>
+                    <td rowspan="3">For these positions available U-13, U-14,<br>
+                    U-16, U-18. Distribution to be determined<br>
+                    by Chief of the 2nd U-Boat Flotilla.
+                    </td>
+                </tr>
+            </table>
+            <p class="heavyIndent"><span>3&rpar; 
+               The positions must be taken up by 4:30 a.m. on 3 August. Positions 1 and 2 are to be laid by 
+               S.100. Positions 3, 4, 5, 6, and 7 are to be taken up independently. Boats to be ready to dive and blacked out. 
+               Conduct in the event of enemy countermeasures during the advance to positions: see annex. 
+               If enemy forces are not in sight, after taking up the security line S.100 will inspect positions 1–7. 
+               S.100 then to U-boat harbor, Stettin-Hoschee buoy for protection of the U-boat harbor.
+            </span></p>
+            <p class="heavyIndent"><span>4&rpar; At positions, drop anchor buoys. As long as the outer torpedo boat line holds, the operational area is bounded by it. Should torpedo boats fall back before enemy forces, advance beyond the outer security line for attack is permitted.
+            </span></p>
+            <p class="heavyIndent"><span>5&rpar;Positions are to be vacated at 8 p.m. on 3 August or on <abbr title="Seiner Kaiserlichen, term for imperial command authority">S.K.</abbr> orders. Boats to enter U-boat harbour.</span></p>
+            <p class="heavyIndent"><span>6&rpar; Use of deck guns at the commander's discretion. The deck gun is to be kept manned as long as it is clear. Boats of the First U-Flotilla: deck gun manned if possible from 0h 0m to 0h 45m.
+            </span></p>
+            <p class="heavyIndent"><span>7&rpar; In fog: carry out the mission.</span></p>
+        </ol>
+        </div>
+    </body>
+    </html>
