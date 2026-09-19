@@ -1,0 +1,162 @@
+<html>
+    <head>
+        <style>
+            .body {
+                font-family: inherit;
+                font-weight: 800;
+                margin: 0;
+            }
+            a, a:link, a:visited, a:active {
+                color: rgb(0, 0, 0);
+            }
+            a:hover {
+                color: blue
+            }
+            .point-label {
+                display: inline-block;     /* critical: allows auto width */
+                padding: 2px 6px;          /* gives breathing room */
+                color: white;
+                font-family: 'IM Fell DW Pica';
+                white-space: nowrap;       /* prevents wrapping */
+                text-shadow: 1px 1px 2px black;
+                border-radius: 3px;
+                pointer-events: none;
+            }
+            .u-popup {
+                border-radius: 4px;
+                font-family: "IM Fell DW Pica", serif;
+                font-size: 14px;
+                max-width: 190px;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+                transition: transform 0.1s ease-out;
+                will-change: transform;
+            }
+            .u-popup .leaflet-popup-content-wrapper {
+                border: 0;
+            }
+            .u-popup .leaflet-popup-tip {
+                padding: 0px;
+                background: rgba(0, 0, 0, 0.75);    
+            }
+        </style>
+    </head>
+    <body>
+        <div class="body">
+        <p>This copy of an order is repeated for each U-boat throughout the roll.</p>
+
+        <p>The date of this document, 2 August 1914, shows that it was drafted when Britain had not yet joined the war 
+            (they declared war on 4 August, after Germany attacked Belgium). The French and Russians had mobilized
+            before Germany, but Germany apparently declared war on them before vice versa. The German imperial government
+            wanted Britain to stay neutral, and not harming British ships was a means to that end. The German government
+            sent Belgium an ultimatum on 2 August, telling them to let the German Army pass through Belgium on the way to France. 
+        </p>
+
+        <p>U-boat positions:</p>
+        <div id="map0003" data-init="initMap0003" style="height: 400px; width: 500px;"></div>
+
+
+        <script>
+  // Initialize map
+  function initMap0003(container) {
+  const map = L.map(container).setView([54.2, 7.7], 9);
+
+  map.on('zoom', () => {
+  const zoom = map.getZoom();
+
+  // Adjust scale factor however you like
+  const scale = 0.6 + (zoom - 7) * 0.1;
+
+  // Apply scale to all open popups
+  document.querySelectorAll('.u-popup').forEach(popup => {
+    popup.style.transform = `scale(${scale})`;
+    popup.style.transformOrigin = 'bottom center';
+  });
+});
+
+
+    const esriSat = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+  {
+    maxZoom: 19,
+    attribution: 'Tiles © Esri'
+  }
+);
+const esriLabels = L.tileLayer(
+  'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
+  {
+    maxZoom: 19,
+    attribution: 'Labels © Esri'
+  }
+);
+esriSat.addTo(map);
+esriLabels.addTo(map);
+
+const positionIcon = L.icon({
+    iconUrl: 'https://i.ibb.co/HL97KGLb/Imperial-German-Navy-Flag-svg.png',
+    iconSize: [16, 16],
+    iconAnchor: [0,0],
+    popupAnchor: [0,-32]
+})
+
+  // Coordinate list
+const stations = [
+  { name: "U-21",  coords: [53.866667, 7.466667] },
+  { name: "U-22",  coords: [54.000000, 7.425000] },
+  { name: "U-29",  coords: [54.133333, 7.458333] },
+  { name: "U-24",  coords: [54.258333, 7.633333] },
+  { name: "Position 5, Unassigned", coords: [54.358333, 7.691667] },
+  { name: "Position 5, Unassigned", coords: [54.433333, 7.875000] },
+  { name: "Position 5, Unassigned", coords: [54.475000, 8.100000] }
+];
+
+const popupInfo = {
+  "U-21": "To be laid down by S-100",
+  "U-22": "To be laid down by S-100",
+  "U-29": "To be taken up independently",
+  "U-24": "To be taken up independently"
+};
+
+stations.forEach(station => {
+    const popupContent = `
+  ${popupInfo[station.name] || ""}
+  ${station.name.includes("Unassigned") ? "Available boats: U‑13, U‑14, U‑16, U‑18" : ""}
+`;
+
+  // Marker
+  L.marker(station.coords, { icon: positionIcon })
+    .addTo(map)
+    .bindPopup(popupContent, { className: 'u-popup', offset: [0, -8] });
+
+  // Label next to marker
+  L.marker(station.coords, {
+    interactive: false,
+    icon: L.divIcon({
+      className: 'point-label',
+      html: station.name,
+      iconAnchor: [30, 20]   // adjust label position
+    })
+  }).addTo(map);
+});
+
+const coords = stations.map(s => s.coords);
+
+ // Fit bounds to all points
+const bounds = L.latLngBounds(coords);
+map.fitBounds(bounds);
+
+// Geodesic polyline
+const geodesicLine = L.geodesic(coords, {
+  weight: 3,
+  opacity: 0.9,
+  dashArray: '6 10',
+  color: 'red'
+}).addTo(map);
+
+map.fitBounds(geodesicLine.getBounds());
+
+  }
+
+        </script>
+        </div>
+    </body>
+</html>
