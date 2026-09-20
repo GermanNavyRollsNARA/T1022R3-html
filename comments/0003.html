@@ -1,8 +1,11 @@
 <html>
     <head>
         <style>
+            :root {
+              --commentary-font: 'Courier New', monospace;
+            }
             .body {
-                font-family: inherit;
+                font-family: var(--commentary-font, inherit);
                 font-weight: 800;
                 margin: 0;
             }
@@ -50,26 +53,20 @@
             wanted Britain to stay neutral, and not harming British ships was a means to that end. The German government
             sent Belgium an ultimatum on 2 August, telling them to let the German Army pass through Belgium on the way to France. 
         </p>
-        <p>U-boat positions:</p>
 
-        <div id="commentary-map">
+        <p>U-boat positions:</p>
         <div id="map0003" data-init="initMap0003" style="height: 400px; width: 500px;"></div>
-        </div>
-        <div id="commentary-text">
-        
-        <p>S.100 is the name of a destroyer.</p>
-        </div>
+
+
         <script>
   // Initialize map
   function initMap0003(container) {
- console.log("Container size:", container.offsetWidth, container.offsetHeight);
   const map = L.map(container).setView([54.2, 7.7], 9);
 
   map.on('zoom', () => {
-  const zoom = map.getZoom();
-
-  // Adjust scale factor however you like
-  const scale = 0.6 + (zoom - 7) * 0.1;
+    const zoom = map.getZoom();
+    // Adjust scale factor however you like
+    const scale = 0.6 + (zoom - 7) * 0.1;
 
   // Apply scale to all open popups
   document.querySelectorAll('.u-popup').forEach(popup => {
@@ -78,8 +75,7 @@
   });
 });
 
-
-    const esriSat = L.tileLayer(
+const esriSat = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
   {
     maxZoom: 19,
