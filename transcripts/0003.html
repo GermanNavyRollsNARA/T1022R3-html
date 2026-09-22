@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family=Italianno&display=swap" rel="stylesheet">
         <style>
         :root {
           --transcription-font: 'UnifrakturCook', serif;
@@ -145,8 +146,30 @@
           text-indent: 50px;       /* pulls the first line back to the left */
           line-height: 1.3;
         }
+        .end {
+          margin-bottom: 0;
+        }
         .wideLetter {
           letter-spacing: 3cap;
+        }
+        .wideName {
+          letter-spacing: 1ch;
+        }
+        .longIndent {
+          display: block;
+          text-indent: 160px;
+          margin-top: 0px
+        }
+        .bottomrule {
+          width: 30%;
+          margin-left: 150px;
+          height: 2px;
+          border: none;
+          background-color: black;
+        }
+        .signature {
+          font-family: 'Italianno';
+          font-size: 25pt;
         }
         </style>
     </head>
@@ -237,8 +260,11 @@
             ten. S.K. ist, solange sie klar ist, besetzt zu halten. Boote der
             Ersten U-Flottille S.K. möglichst besetzt von O <sup>"</sup> 0 <sup>m</sup> bis D <sup>"</sup> 45 <sup>m</sup>.
             </span></p>
-            <p class="heavyIndent"><span>7.&rpar; Bei Nebel: Aufgabe durchführen.</span></p>
+            <p class="heavyIndent end"><span>7.&rpar; Bei Nebel: Aufgabe durchführen.</span></p>
+            <p class="longIndent">gez. Otto <span class="wideName">Feldmann.</span></p>
         </ol>
+            <hr class="center bottomrule">
+            <p class="signature center">Gefertigt: ?Adolf Neumann <sup>13</sup>/4.18.</p>
         </div>
     </body>
     </html>
