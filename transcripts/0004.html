@@ -2,10 +2,14 @@
 <html>
     <head>
         <style>
-             .body {
+            .root {
+                --transcription-font: 'UnifrakturCook', serif
+            }
+             .gbody {
                 font-weight: 600;
                 font-style: normal;
                 margin-left: 50px;
+                font-family: var(--transcription-font);
             }
             .datePlace {
                 display: flex;
@@ -72,7 +76,7 @@
             }
             .upositions td:first-child {
                 width: 50px;
-            }
+            } 
             .upositions td:nth-child(2) {
                 width: 125px;
             }
@@ -85,7 +89,7 @@
             </style>
     </head>
     <body>
-        <div class="body">
+        <div class="gbody">
         <div class="datePlace"><span class="leftText">I. U. Flottille.</span> <span>Gg. 10 K.</span> <span class="rightText">Helgoland, den 8.8.14.</span></div>
 
         <div class="center"><span class="doubleUnderline">Ganz Geheim.</span></div>
